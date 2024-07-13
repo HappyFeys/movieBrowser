@@ -1,21 +1,18 @@
 
-
-import Header from './component/Header'
-import Form from './component/Form'
-import NavBar from './component/NavBar'
-import MainMovie from './component/MainMovie'
-import CategorieList from './component/CategorieList'
+import { Routes, Route} from 'react-router-dom'
+import Discover from './component/Discover/Discover'
+import Home from './component/Home/Home'
+import Details from './component/Details/Details'
 
 function App() {
-  
 
   return (
     <>  
-    <Header />
-    <Form />
-    <CategorieList />
-    <MainMovie />
-    <NavBar />
+    <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/discover" element={<Discover />} />
+        <Route path="/details/:id" element={<Details />} />
+    </Routes>
     </>
   )
 }

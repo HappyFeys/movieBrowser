@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import useMoviesAPI from "./useMoviesAPI"
+import useMoviesAPI from "../Hook/useMoviesAPI"
 
 function CategorieList(){
 
@@ -32,9 +32,9 @@ function CategorieList(){
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;return (
         <div className="w-full overflow-x-hidden">
-            <ul className="flex">
+            <ul className="flex lg:justify-center">
                 {categories.map(categorie => (
-                    <li className="p-3" key={categorie.id}>{categorie.name}</li>
+                    <li className="p-3 hover:bg-custom-gradient hover:bg-clip-text hover:text-fill-transparent cursor-pointer" key={categorie.id}>{categorie.name}</li>
                 ))}
             </ul>
         </div>
